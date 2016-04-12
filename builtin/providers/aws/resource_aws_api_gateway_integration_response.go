@@ -71,6 +71,7 @@ func resourceAwsApiGatewayIntegrationResponseCreate(d *schema.ResourceData, meta
 		ResourceId:        aws.String(d.Get("resource_id").(string)),
 		RestApiId:         aws.String(d.Get("rest_api_id").(string)),
 		StatusCode:        aws.String(d.Get("status_code").(string)),
+		SelectionPattern:  aws.String(d.Get("selection_pattern").(string)),
 		ResponseTemplates: aws.StringMap(templates),
 		// TODO implement once [GH-2143](https://github.com/hashicorp/terraform/issues/2143) has been implemented
 		ResponseParameters: nil,
